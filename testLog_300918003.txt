@@ -1,0 +1,307 @@
+Using network 'development'.
+
+Compiling ./contracts/DepositHolder.sol...
+Compiling ./contracts/MultiplierHolder.sol...
+Compiling ./contracts/Owned.sol...
+Compiling ./contracts/Pausable.sol...
+Compiling ./contracts/Regulated.sol...
+Compiling ./contracts/Regulator.sol...
+Compiling ./contracts/RoutePriceHolder.sol...
+Compiling ./contracts/TollBoothHolder.sol...
+Compiling ./contracts/TollBoothOperator.sol...
+Compiling ./contracts/interfaces/DepositHolderI.sol...
+Compiling ./contracts/interfaces/MultiplierHolderI.sol...
+Compiling ./contracts/interfaces/OwnedI.sol...
+Compiling ./contracts/interfaces/PausableI.sol...
+Compiling ./contracts/interfaces/RegulatedI.sol...
+Compiling ./contracts/interfaces/RegulatorI.sol...
+Compiling ./contracts/interfaces/RoutePriceHolderI.sol...
+Compiling ./contracts/interfaces/TollBoothHolderI.sol...
+Compiling ./contracts/interfaces/TollBoothOperatorI.sol...
+Compiling ./contracts/mock/RoutePriceHolderMock.sol...
+Compiling ./test/TestOwnedA.sol...
+Compiling ./test/TestOwnedB.sol...
+Compiling ./test/TestOwnedC.sol...
+Compiling ./test/TestRoutePriceHolderA.sol...
+Compiling ./test/TestRoutePriceHolderB.sol...
+Compiling truffle/Assert.sol...
+Compiling truffle/DeployedAddresses.sol...
+
+[0m[0m
+[0m  TestOwnedC[0m
+  [32m  ✓[0m[90m testInitialOwner[0m[31m (530ms)[0m
+  [32m  ✓[0m[90m testCanChangeOwner[0m[31m (465ms)[0m
+
+[0m  TestOwnedB[0m
+  [32m  ✓[0m[90m testInitialOwner[0m[31m (194ms)[0m
+  [32m  ✓[0m[90m testCanChangeOwner[0m[31m (272ms)[0m
+
+[0m  TestOwnedA[0m
+  [32m  ✓[0m[90m testInitialOwner[0m[31m (280ms)[0m
+  [32m  ✓[0m[90m testCanChangeOwner[0m[31m (527ms)[0m
+
+[0m  TestRoutePriceHolderB[0m
+  [32m  ✓[0m[90m testInitialTollBoothHoldingValues[0m[31m (148ms)[0m
+  [32m  ✓[0m[90m testCanAddTollBooth[0m[31m (188ms)[0m
+  [32m  ✓[0m[90m testInitialRoutePrices[0m[31m (166ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePrice[0m[31m (283ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePriceBackToZero[0m[31m (325ms)[0m
+  [32m  ✓[0m[90m testCanAddAndRemoveManyRoutePrices_TollBoothOperator[0m[31m (5861ms)[0m
+
+[0m  TestRoutePriceHolderA[0m
+  [32m  ✓[0m[90m testInitialTollBoothHoldingValues[0m[31m (100ms)[0m
+  [32m  ✓[0m[90m testCanAddTollBooth[0m[31m (152ms)[0m
+  [32m  ✓[0m[90m testInitialRoutePrices[0m[31m (119ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePrice[0m[31m (241ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePriceBackToZero[0m[31m (239ms)[0m
+  [32m  ✓[0m[90m testCanAddAndRemoveManyRoutePrices_RoutePriceHolderMock[0m[31m (5988ms)[0m
+
+[0m  Contract: MultiplierHolder - stress[0m
+[0m    MultiplierHolder[0m
+[0m      stress test[0m
+      [32m  ✓[0m[90m should be possible to set and unset 500 multipliers[0m
+[0m    TollBoothOperator[0m
+[0m      stress test[0m
+      [32m  ✓[0m[90m should be possible to set and unset 500 multipliers[0m
+
+[0m  Contract: MultiplierHolder[0m
+  [32m  ✓[0m[90m should fail to deploy a MultiplierHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a TollBoothOperator if pass value[0m
+  [31m  1) should have correct number of functions[0m
+    > No events were emitted
+[0m    MultiplierHolder[0m
+[0m      getMultiplier[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (63ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for multiplier from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getMultiplier[0m[31m (102ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getMultiplier[0m
+[0m      setMultiplier[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if asking from wrong owner[0m[33m (55ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if type is 0[0m[33m (49ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if no change[0m[31m (94ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if pass value[0m
+      [32m  ✓[0m[90m should be possible to set 1 multipliers[0m[31m (146ms)[0m
+[0m      setMultiplier a second time[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - zero[0m[31m (153ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - multiplier1[0m[31m (124ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier0[0m[31m (121ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier1[0m[31m (134ms)[0m
+[0m      setMultiplier a second time after an owner change[0m
+      [32m  ✓[0m[90m should not be possible to set another multiplier if old owner[0m[33m (39ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if same[0m[33m (53ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier[0m[31m (162ms)[0m
+[0m    TollBoothOperator[0m
+[0m      getMultiplier[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (71ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for multiplier from any address[0m[33m (59ms)[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getMultiplier[0m[31m (118ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getMultiplier[0m
+[0m      setMultiplier[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if asking from wrong owner[0m[33m (63ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if type is 0[0m[33m (60ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if no change[0m[31m (120ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if pass value[0m
+      [32m  ✓[0m[90m should be possible to set 1 multipliers[0m[31m (185ms)[0m
+[0m      setMultiplier in TollBoothOperator is not pausable[0m
+      [32m  ✓[0m[90m should be possible to check getMultiplier if paused[0m
+      [32m  ✓[0m[90m should be possible to set multiplier if paused[0m[31m (141ms)[0m
+[0m      setMultiplier a second time[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - zero[0m[31m (152ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - multiplier1[0m[31m (171ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier0[0m[31m (171ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier1[0m[31m (132ms)[0m
+[0m      setMultiplier a second time after an owner change[0m
+      [32m  ✓[0m[90m should not be possible to set another multiplier if old owner[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if same[0m[33m (38ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier[0m[31m (126ms)[0m
+
+[0m  Contract: Owned inheritance tree[0m
+  [32m  ✓[0m[90m should fail to deploy a Owned if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a Pausable if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a Regulator if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a DepositHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a MultiplierHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a RoutePriceHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a TollBoothHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a TollBoothOperator if pass value[0m
+  [32m  ✓[0m[90m should have correct number of functions[0m[31m (77ms)[0m
+[0m    Owned[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (78ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (65ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (54ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (125ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (50ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (201ms)[0m
+[0m    Pausable[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[33m (75ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (53ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (43ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (56ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (107ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (42ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (92ms)[0m
+[0m    Regulator[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[31m (229ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[33m (62ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (51ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (45ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (97ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (108ms)[0m
+[0m    DepositHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[33m (67ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (44ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (55ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[31m (450ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (110ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (92ms)[0m
+[0m    MultiplierHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (77ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (39ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (43ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (42ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (103ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (93ms)[0m
+[0m    RoutePriceHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[33m (72ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (62ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (51ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (107ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (104ms)[0m
+[0m    TollBoothHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (39ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[33m (73ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (51ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (47ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (44ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (120ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (47ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (91ms)[0m
+[0m    TollBoothOperator[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[33m (75ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (70ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (43ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (47ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (119ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (108ms)[0m
+
+[0m  Contract: TollBoothOperator[0m
+  [31m  2) should have correct number of functions[0m
+    > No events were emitted
+[0m    deploy[0m
+    [32m  ✓[0m[90m should not be possible to deploy a TollBoothOperator with deposit 0 - 1[0m[33m (74ms)[0m
+    [32m  ✓[0m[90m should be possible to deploy a TollBoothOperator with parameters - 1[0m[31m (199ms)[0m
+[0m    Vehicle Operations[0m
+[0m      enterRoad[0m
+      [32m  ✓[0m[90m should not be possible to enter road if paused[0m[31m (109ms)[0m
+      [32m  ✓[0m[90m should be possible to enter road with more than required deposit[0m[31m (227ms)[0m
+[0m      reportExitRoad with excessive deposited[0m
+      [32m  ✓[0m[90m should be possible to report exit road on route with known price below deposited[0m[31m (439ms)[0m
+      [32m  ✓[0m[90m should be possible to report exit road on route with unknown price[0m[31m (311ms)[0m
+[0m      Pending payments with vehicles on same route, then setRoutePrice[0m
+      [32m  ✓[0m[90m should be possible to set the base route price below both deposits and reduce count by 1[0m[31m (431ms)[0m
+      [32m  ✓[0m[90m should be possible to set the base route price above both deposits and reduce count by 1[0m[31m (642ms)[0m
+[0m        Clear one more pending payment[0m
+        [32m  ✓[0m[90m should be possible to set the base route price below both deposits then clear the second by hand[0m[31m (574ms)[0m
+[0m    Withdraw from 2 vehicles[0m
+    [32m  ✓[0m[90m should be possible to withdraw if second vehicle has exited[0m[31m (240ms)[0m
+
+[0m  Contract: Regulator, Toll Booth Operator[0m
+[0m    isOperator[0m
+    [32m  ✓[0m[90m should have correct initial value[0m[31m (87ms)[0m
+[0m    createNewOperator[0m
+    [32m  ✓[0m[90m should be possible to create an operator[0m[31m (425ms)[0m
+[0m    removeOperator[0m
+    [32m  ✓[0m[90m should be possible to remove an operator[0m[31m (310ms)[0m
+
+
+[92m [0m[32m 166 passing[0m[90m (5m)[0m
+[31m  2 failing[0m
+
+[0m  1) Contract: MultiplierHolder
+       should have correct number of functions:
+
+      [31mAssertionError: expected 15 to equal 14[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-15[0m
+      [32m+14[0m
+      [0m[90m
+      at test/multiplierHolder.js:286:36
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  2) Contract: TollBoothOperator
+       should have correct number of functions:
+
+      [31mAssertionError: expected 52 to equal 43[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-52[0m
+      [32m+43[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:473:38
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+
+

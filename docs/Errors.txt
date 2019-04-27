@@ -1,0 +1,243 @@
+ Contract: MultiplierHolder
+    ✓ should fail to deploy a MultiplierHolder if pass value (53ms)
+    ✓ should fail to deploy a TollBoothOperator if pass value
+    1) should have correct number of functions
+    > No events were emitted
+    MultiplierHolder
+      getMultiplier
+*********************************************************************************
+Contract: Regulator, Toll Booth Operator
+    isOperator
+      ✓ should have correct initial value (121ms)
+    createNewOperator
+      ✓ should be possible to create an operator (447ms)
+    removeOperator
+      ✓ should be possible to remove an operator (289ms)
+
+  Contract: TollBoothOperator
+    3) should have correct number of functions
+    > No events were emitted
+    deploy
+      ✓ should not be possible to deploy a TollBoothOperator with deposit 0 - 1 (159ms)
+      ✓ should be possible to deploy a TollBoothOperator with parameters - 1 (294ms)
+    Vehicle Operations
+      enterRoad
+        ✓ should not be possible to enter road if paused (103ms)
+        ✓ should be possible to enter road with more than required deposit (176ms)
+      reportExitRoad with excessive deposited
+        4) should be possible to report exit road on route with known price below deposited
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1352)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 45)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 822)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 87120)
+
+    ---------------------------
+        5) should be possible to report exit road on route with unknown price
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1352)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 45)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 822)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 87120)
+
+    ---------------------------
+      Pending payments with vehicles on same route, then setRoutePrice
+        6) should be possible to set the base route price below both deposits and reduce count by 1
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1352)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 45)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 822)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 64845)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 1136826)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogRoadExited(exitBooth: <indexed>, exitSecretHashed: <indexed>, finalFee: 1111344, refundWeis: 25482)
+
+    ---------------------------
+        7) should be possible to set the base route price above both deposits and reduce count by 1
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1352)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 45)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 822)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 64845)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 1136826)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogRoadExited(exitBooth: <indexed>, exitSecretHashed: <indexed>, finalFee: 2321328, refundWeis: 0)
+
+    ---------------------------
+        Clear one more pending payment
+          ✓ should be possible to set the base route price below both deposits then clear the second by hand (494ms)
+    Withdraw from 2 vehicles
+      8) should be possible to withdraw if second vehicle has exited
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1352)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 45)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 822)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 60840)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 1111344)
+    LogRoadExited(exitBooth: <indexed>, exitSecretHashed: <indexed>, finalFee: 372366, refundWeis: 738978)
+    LogFeesCollected(owner: <indexed>, amount: 372366)
+
+    ---------------------------
+
+
+  160 passing (6m)
+  8 failing
+
+  1) Contract: MultiplierHolder
+       should have correct number of functions:
+
+      AssertionError: expected 16 to equal 14
+      + expected - actual
+
+      -16
+      +14
+
+      at test/multiplierHolder.js:286:36
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  2) Contract: Owned inheritance tree
+       should have correct number of functions:
+
+      AssertionError: expected 12 to equal 11
+      + expected - actual
+
+      -12
+      +11
+
+      at test/owned.js:181:35
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  3) Contract: TollBoothOperator
+       should have correct number of functions:
+
+      AssertionError: expected 53 to equal 43
+      + expected - actual
+
+      -53
+      +43
+
+      at test/tollBoothOperator_student.js:473:38
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  4) Contract: TollBoothOperator
+       Vehicle Operations
+         reportExitRoad with excessive deposited
+           should be possible to report exit road on route with known price below deposited:
+
+      AssertionError: expected 0 to equal 1
+      + expected - actual
+
+      -0
+      +1
+
+      at test/tollBoothOperator_student.js:145:44
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  5) Contract: TollBoothOperator
+       Vehicle Operations
+         reportExitRoad with excessive deposited
+           should be possible to report exit road on route with unknown price:
+
+      AssertionError: expected 1 to equal 2
+      + expected - actual
+
+      -1
+      +2
+
+      at test/tollBoothOperator_student.js:186:44
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  6) Contract: TollBoothOperator
+       Vehicle Operations
+         Pending payments with vehicles on same route, then setRoutePrice
+           should be possible to set the base route price below both deposits and reduce count by 1:
+
+      AssertionError: expected 1 to equal 2
+      + expected - actual
+
+      -1
+      +2
+
+      at test/tollBoothOperator_student.js:248:32
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  7) Contract: TollBoothOperator
+       Vehicle Operations
+         Pending payments with vehicles on same route, then setRoutePrice
+           should be possible to set the base route price above both deposits and reduce count by 1:
+
+      AssertionError: expected 1 to equal 2
+      + expected - actual
+
+      -1
+      +2
+
+      at test/tollBoothOperator_student.js:305:32
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  8) Contract: TollBoothOperator
+       Withdraw from 2 vehicles
+         should be possible to withdraw if second vehicle has exited:
+
+      AssertionError: expected 433206 to equal 60840
+      + expected - actual
+
+      -433206
+      +60840
+
+      at test/tollBoothOperator_student.js:460:28
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TollBooth Project DAPP</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <main>
+
+    <input id="tab1" type="radio" name="tabs" checked style="display: none">
+    <label for="tab1">Regulator</label>
+
+    <input id="tab2" type="radio" name="tabs" style="display: none">
+    <label for="tab2">TollBooth Admin</label>
+
+    <input id="tab3" type="radio" name="tabs" style="display: none">
+    <label for="tab3">Vehicles Operation</label>
+
+    <input id="tab4" type="radio" name="tabs" style="display: none">
+    <label for="tab4">TollBooth Operations</label>
+
+    <section id="content1">
+      <div id="regulator">
+        <h1>Regulator App</h1>
+        <label>Using account: <span class="black"><span id="reg_Owner"></span></span> as a regulator owner</label>
+        <h3>Set Vehicle Type</h3>
+        <label for="regVehcileID">Vehicle ID:</label><input id="regVehcileID" placeholder="e.g., 1" style="width:250px"
+          type="text">
+        <label for="regVehcileType">Vehicle Tyhpe:</label><input id="regVehcileType" placeholder="e.g., 1" style="width:80px"
+          type="text">
+        <br><br><button id="sendSetVehicleTypes" style="width:150px;">Set Vehcile Type</button>
+        <br><br>
+        <br><br>
+        <h3>Create New TollBooth Operator</h3>
+        <label>Owner Address:</label> <input id="tollBoothOwnerAddress" style="width:250px" type="text" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64"> <label>Initial
+          Deposit:</label> <input id="initDeposit" placeholder="e.g., 100" style="width:80px" type="text">
+        <br><br> <button id="createTollBooth" style="width:150px;">Create New Toll
+          Booth</button>
+        <br><br>        
+      </div>
+    </section>
+
+    <section id="content2">
+      <div id="tollBoothAdmin">
+        <h1>Toll Booth Admin</h1>
+        <label>Using last create TollBooth: <span class="black"><span id="reg_TollBoothAdd"></span></span> </label>
+        <h3>Add toll Booths</h3>
+        <label for="tbTollBoothAdd">Toll Booth  Address:</label><input id="tbTollBoothAdd" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64" style="width:250px" type="text">
+        <br><br><button id="sendAddTollBooth" style="width:150px;">Add TollBooth</button><br /><br />
+        <hr/>
+        <br><br><h3>Add Base Route Price</h3>
+        <label for="tbEntryBoothAdd">Entry Booth Address:</label><input id="tbEntryBoothAdd" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64"
+          style="width:250px" type="text">
+        <br/><label for="tbExitBoothAdd">Exit Booth Address:</label><input id="tbExitBoothAdd" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64"
+            style="width:250px" type="text">
+        <br /><label for="tbRoutePrice">Route Price:</label><input id="tbRoutePrice" placeholder="e.g., 150"
+          style="width:150px" type="text">
+        <br><br><button id="setRoutePrice" style="width:150px;">Set Route Price</button><br/><br />
+        <hr />
+        <br><br><h3>Set Vehicle Multiplier</h3>
+        <label for="tbVehicleType">Vehicle Type:</label><input id="tbVehicleType" placeholder="e.g., 1" style="width:80px" type="text"> &nbsp;<label for="tbMultiplier"></label>Multiplier:</label><input id="tbMultiplier" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64" style="width:80px"
+          type="text">
+        <br><br><button id="setMultiplier" style="width:150px;">Set Multiplier</button>
+
+      </div>
+    </section>
+
+    <section id="content3">
+      <div id="tollBoothAdmin">
+        <h1>Vehicles Operations</h1>
+        <label>Using last create TollBooth: <span class="black"><span id="spnTollBoothAdd"></span></span> </label>
+        <h3>See Vehicles Basic Ether Balance</h3>
+        <label for="vopVehicleAddress">Vehicle Address:</label><input id="vopVehicleAddress" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64"
+          style="width:250px" type="text"> <span id="vopVehBalance"></span>        
+        <br><br><button id="btVehicleBalance" style="width:150px;">See Balance</button><br /><br />
+        <hr/>
+        <br><br><h3>Make Entry Deposit</h3>
+        <label for="vopEntryVehicleAddress">Vehicle Address:</label><input id="vopEntryVehicleAddress" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64"
+          style="width:250px" type="text"> 
+        <br> <label for="vopEntryBoothAdd">Entry Booth Address:</label><input id="vopEntryBoothAdd" placeholder="e.g., 77883" style="width:250px" type="text">
+        <br> <label for="vopEntryVehicleSecret">Entry Secret:</label><input id="vopEntryVehicleSecret" placeholder="e.g., 77883"
+          style="width:250px" type="text">
+        <br> <label for="vopEntryVehicleDepo">Deposit Amount:</label><input id="vopEntryVehicleDepo" placeholder="e.g., 150"
+          style="width:150px" type="text">
+        <br><br><button id="btDoEntry" style="width:150px;">Make Entry Deposit</button><br /><br />
+      </div>
+    </section>
+
+    <section id="content4">
+      <div id="tollBoothOop">
+        <h1>TollBooth Operations</h1>
+        <label>Using last create TollBooth: <span class="black"><span id="spnTollBoothOop"></span></span> </label>
+        <h3>Report Exit</h3>
+        <label for="inpExitSecret">Exit Secret:</label><input id="inpExitSecret" placeholder="e.g., 12345"
+          style="width:250px" type="text"> <span id="vopVehBalance"></span>
+        <br><label for="inpExitBoothAdd">Exit Booth Add:</label><input id="inpExitBoothAdd" placeholder="e.g., 0x13921399db1a7935af7ae97d6c3125dabe44da64" style="width:250px"
+          type="text">
+        <br><br><button id="btReportExit" style="width:150px;">Report Exit</button><br/><br/>
+      </div>
+      
+    </section>
+    
+    <br>
+    <div>
+      <span id="status"></span>
+      <br/><br/><span class="hint"><strong>Hint:</strong> open the browser developer console to view any errors and warnings.</span>
+    </div>
+    
+  </main>
+
+</body>
+
+</html>

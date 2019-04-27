@@ -1,0 +1,386 @@
+vagrant@vagrant-ubuntu-trusty-64:~/DAPPS/furqanbaqai-code$ truffle test
+(node:2705) ExperimentalWarning: The fs.promises API is experimental
+Using network 'development'.
+
+Compiling ./contracts/DepositHolder.sol...
+Compiling ./contracts/MultiplierHolder.sol...
+Compiling ./contracts/Owned.sol...
+Compiling ./contracts/Pausable.sol...
+Compiling ./contracts/Regulated.sol...
+Compiling ./contracts/Regulator.sol...
+Compiling ./contracts/RoutePriceHolder.sol...
+Compiling ./contracts/TollBoothHolder.sol...
+Compiling ./contracts/TollBoothOperator.sol...
+Compiling ./contracts/interfaces/DepositHolderI.sol...
+Compiling ./contracts/interfaces/MultiplierHolderI.sol...
+Compiling ./contracts/interfaces/OwnedI.sol...
+Compiling ./contracts/interfaces/PausableI.sol...
+Compiling ./contracts/interfaces/RegulatedI.sol...
+Compiling ./contracts/interfaces/RegulatorI.sol...
+Compiling ./contracts/interfaces/RoutePriceHolderI.sol...
+Compiling ./contracts/interfaces/TollBoothHolderI.sol...
+Compiling ./contracts/interfaces/TollBoothOperatorI.sol...
+Compiling ./contracts/mock/RoutePriceHolderMock.sol...
+Compiling ./test/TestOwnedA.sol...
+Compiling ./test/TestOwnedB.sol...
+Compiling ./test/TestOwnedC.sol...
+Compiling ./test/TestRoutePriceHolderA.sol...
+Compiling ./test/TestRoutePriceHolderB.sol...
+Compiling truffle/Assert.sol...
+Compiling truffle/DeployedAddresses.sol...
+
+Compilation warnings encountered:
+
+/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:26:25: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function hashSecret(bytes32 secret)
+                        ^------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:35:13: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+            address entryBooth,
+            ^----------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:36:13: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+            bytes32 exitSecretHashed)
+            ^----------------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:45:30: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function getVehicleEntry(bytes32 exitSecretHashed)
+                             ^----------------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:58:29: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function reportExitRoad(bytes32 exitSecretClear)
+                            ^---------------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:65:37: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function getPendingPaymentCount(address entryBooth, address exitBooth)
+                                    ^----------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:65:57: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function getPendingPaymentCount(address entryBooth, address exitBooth)
+                                                        ^---------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:74:13: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+            address entryBooth,
+            ^----------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:75:13: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+            address exitBooth,
+            ^---------------^
+,/home/vagrant/DAPPS/furqanbaqai-code/contracts/TollBoothOperator.sol:76:13: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+            uint count)
+            ^--------^
+
+
+
+  TestOwnedA
+    ✓ testInitialOwner (796ms)
+    ✓ testCanChangeOwner (616ms)
+
+  TestOwnedC
+    ✓ testInitialOwner (251ms)
+    ✓ testCanChangeOwner (464ms)
+
+  TestRoutePriceHolderA
+    ✓ testInitialTollBoothHoldingValues (144ms)
+    ✓ testCanAddTollBooth (157ms)
+    ✓ testInitialRoutePrices (140ms)
+    ✓ testCanSetRoutePrice (221ms)
+    ✓ testCanSetRoutePriceBackToZero (238ms)
+    ✓ testCanAddAndRemoveManyRoutePrices_RoutePriceHolderMock (6168ms)
+
+  TestRoutePriceHolderB
+    ✓ testInitialTollBoothHoldingValues (165ms)
+    ✓ testCanAddTollBooth (185ms)
+    ✓ testInitialRoutePrices (138ms)
+    ✓ testCanSetRoutePrice (236ms)
+    ✓ testCanSetRoutePriceBackToZero (235ms)
+    ✓ testCanAddAndRemoveManyRoutePrices_TollBoothOperator (5727ms)
+
+  TestOwnedB
+    ✓ testInitialOwner (135ms)
+    ✓ testCanChangeOwner (201ms)
+
+  Contract: MultiplierHolder
+    ✓ should fail to deploy a MultiplierHolder if pass value
+    ✓ should fail to deploy a TollBoothOperator if pass value
+    1) should have correct number of functions
+    > No events were emitted
+    MultiplierHolder
+      getMultiplier
+        ✓ should have correct initial value (64ms)
+        ✓ should be possible to ask for multiplier from any address (39ms)
+        ✓ should be possible to send a transaction to getMultiplier (85ms)
+        ✓ should not be possible to send a transaction with value to getMultiplier
+      setMultiplier
+        ✓ should not be possible to set multiplier if asking from wrong owner (61ms)
+        ✓ should not be possible to set multiplier if type is 0 (45ms)
+        ✓ should not be possible to set multiplier if no change (106ms)
+        ✓ should not be possible to set multiplier if pass value
+        ✓ should be possible to set 1 multipliers (214ms)
+      setMultiplier a second time
+        ✓ should be possible to set another multiplier with values type0 - zero (196ms)
+        ✓ should be possible to set another multiplier with values type0 - multiplier1 (238ms)
+        ✓ should be possible to set another multiplier with values type1 - multiplier0 (162ms)
+        ✓ should be possible to set another multiplier with values type1 - multiplier1 (143ms)
+      setMultiplier a second time after an owner change
+        ✓ should not be possible to set another multiplier if old owner (65ms)
+        ✓ should not be possible to set multiplier if same (51ms)
+        ✓ should be possible to set another multiplier (205ms)
+    TollBoothOperator
+      getMultiplier
+        ✓ should have correct initial value (74ms)
+        ✓ should be possible to ask for multiplier from any address
+        ✓ should be possible to send a transaction to getMultiplier (80ms)
+        ✓ should not be possible to send a transaction with value to getMultiplier
+      setMultiplier
+        ✓ should not be possible to set multiplier if asking from wrong owner (49ms)
+        ✓ should not be possible to set multiplier if type is 0 (53ms)
+        ✓ should not be possible to set multiplier if no change (108ms)
+        ✓ should not be possible to set multiplier if pass value
+        ✓ should be possible to set 1 multipliers (174ms)
+      setMultiplier in TollBoothOperator is not pausable
+        ✓ should be possible to check getMultiplier if paused
+        ✓ should be possible to set multiplier if paused (191ms)
+      setMultiplier a second time
+        ✓ should be possible to set another multiplier with values type0 - zero (213ms)
+        ✓ should be possible to set another multiplier with values type0 - multiplier1 (197ms)
+        ✓ should be possible to set another multiplier with values type1 - multiplier0 (155ms)
+        ✓ should be possible to set another multiplier with values type1 - multiplier1 (199ms)
+      setMultiplier a second time after an owner change
+        ✓ should not be possible to set another multiplier if old owner (45ms)
+        ✓ should not be possible to set multiplier if same (59ms)
+        ✓ should be possible to set another multiplier (141ms)
+
+  Contract: MultiplierHolder - stress
+    MultiplierHolder
+      stress test
+        ✓ should be possible to set and unset 500 multipliers
+    TollBoothOperator
+      stress test
+        ✓ should be possible to set and unset 500 multipliers
+
+  Contract: Owned inheritance tree
+    ✓ should fail to deploy a Owned if pass value
+    ✓ should fail to deploy a Pausable if pass value
+    ✓ should fail to deploy a Regulator if pass value
+    ✓ should fail to deploy a DepositHolder if pass value
+    ✓ should fail to deploy a MultiplierHolder if pass value
+    ✓ should fail to deploy a RoutePriceHolder if pass value
+    ✓ should fail to deploy a TollBoothHolder if pass value
+    ✓ should fail to deploy a TollBoothOperator if pass value
+    2) should have correct number of functions
+    > No events were emitted
+    Owned
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address
+        ✓ should be possible to send a transaction to getOwner (85ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (49ms)
+        ✓ should not be possible to set owner if to 0 (48ms)
+        ✓ should not be possible to set owner if no change (54ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (93ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (47ms)
+        ✓ should be possible to set owner again (117ms)
+    Pausable
+      getOwner
+        ✓ should have correct initial value (52ms)
+        ✓ should be possible to ask for owner from any address
+        ✓ should be possible to send a transaction to getOwner (79ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (48ms)
+        ✓ should not be possible to set owner if to 0 (45ms)
+        ✓ should not be possible to set owner if no change (47ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (129ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (47ms)
+        ✓ should be possible to set owner again (106ms)
+    Regulator
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address
+        ✓ should be possible to send a transaction to getOwner (58ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (40ms)
+        ✓ should not be possible to set owner if to 0 (40ms)
+        ✓ should not be possible to set owner if no change (55ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (88ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (59ms)
+        ✓ should be possible to set owner again (117ms)
+    DepositHolder
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address
+        ✓ should be possible to send a transaction to getOwner (69ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (68ms)
+        ✓ should not be possible to set owner if to 0 (54ms)
+        ✓ should not be possible to set owner if no change (70ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (135ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (47ms)
+        ✓ should be possible to set owner again (314ms)
+    MultiplierHolder
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address
+        ✓ should be possible to send a transaction to getOwner (88ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (54ms)
+        ✓ should not be possible to set owner if to 0 (58ms)
+        ✓ should not be possible to set owner if no change (79ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (160ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (65ms)
+        ✓ should be possible to set owner again (169ms)
+    RoutePriceHolder
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address (84ms)
+        ✓ should be possible to send a transaction to getOwner (127ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (84ms)
+        ✓ should not be possible to set owner if to 0 (99ms)
+        ✓ should not be possible to set owner if no change (67ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (179ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (75ms)
+        ✓ should be possible to set owner again (178ms)
+    TollBoothHolder
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address (78ms)
+        ✓ should be possible to send a transaction to getOwner (108ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (67ms)
+        ✓ should not be possible to set owner if to 0 (52ms)
+        ✓ should not be possible to set owner if no change (60ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (176ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (55ms)
+        ✓ should be possible to set owner again (138ms)
+    TollBoothOperator
+      getOwner
+        ✓ should have correct initial value
+        ✓ should be possible to ask for owner from any address
+        ✓ should be possible to send a transaction to getOwner (84ms)
+        ✓ should not be possible to send a transaction with value to getOwner
+      setOwner
+        ✓ should not be possible to set owner if asking from wrong owner (51ms)
+        ✓ should not be possible to set owner if to 0 (61ms)
+        ✓ should not be possible to set owner if no change (43ms)
+        ✓ should not be possible to set owner if pass value
+        ✓ should be possible to set owner (102ms)
+      setOwner a second time
+        ✓ should not be possible to set owner if asking from wrong one (56ms)
+        ✓ should be possible to set owner again (436ms)
+
+  Contract: TollBoothOperator
+    3) should have correct number of functions
+    > No events were emitted
+    deploy
+      ✓ should not be possible to deploy a TollBoothOperator with deposit 0 - 1 (95ms)
+      ✓ should be possible to deploy a TollBoothOperator with parameters - 1 (232ms)
+    Vehicle Operations
+      enterRoad
+        4) "before each" hook: should deploy regulator and operator for "should not be possible to enter road if paused"
+    Withdraw from 2 vehicles
+      5) "before each" hook: should deploy regulator and operator, and enter 2 vehicles for "should be possible to withdraw if second vehicle has exited"
+
+  Contract: Regulator, Toll Booth Operator
+    isOperator
+      ✓ should have correct initial value (81ms)
+    createNewOperator
+      6) should be possible to create an operator
+
+    Events emitted during test:
+    ---------------------------
+
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 307)
+
+    ---------------------------
+    removeOperator
+      7) "before each" hook: should create an operator for "should be possible to remove an operator"
+
+
+  155 passing (5m)
+  7 failing
+
+  1) Contract: MultiplierHolder
+       should have correct number of functions:
+
+      AssertionError: expected 16 to equal 14
+      + expected - actual
+
+      -16
+      +14
+
+      at test/multiplierHolder.js:286:36
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  2) Contract: Owned inheritance tree
+       should have correct number of functions:
+
+      AssertionError: expected 12 to equal 11
+      + expected - actual
+
+      -12
+      +11
+
+      at test/owned.js:181:35
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  3) Contract: TollBoothOperator
+       should have correct number of functions:
+
+      AssertionError: expected 49 to equal 43
+      + expected - actual
+
+      -49
+      +43
+
+      at test/tollBoothOperator_student.js:473:38
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  4) Contract: TollBoothOperator
+       Vehicle Operations
+         "before each" hook: should deploy regulator and operator for "should not be possible to enter road if paused":
+     TypeError: Cannot read property 'args' of undefined
+      at test/tollBoothOperator_student.js:75:72
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  5) Contract: TollBoothOperator
+       Withdraw from 2 vehicles
+         "before each" hook: should deploy regulator and operator, and enter 2 vehicles for "should be possible to withdraw if second vehicle has exited":
+     TypeError: Cannot read property 'args' of undefined
+      at test/tollBoothOperator_student.js:426:72
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  6) Contract: Regulator, Toll Booth Operator
+       createNewOperator
+         should be possible to create an operator:
+
+      AssertionError: expected 1 to equal 2
+      + expected - actual
+
+      -1
+      +2
+
+      at test/regulator_tollBoothOperator_student.js:62:28
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+  7) Contract: Regulator, Toll Booth Operator
+       removeOperator
+         "before each" hook: should create an operator for "should be possible to remove an operator":
+     TypeError: Cannot read property 'args' of undefined
+      at test/regulator_tollBoothOperator_student.js:108:52
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+

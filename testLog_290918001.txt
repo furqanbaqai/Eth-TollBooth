@@ -1,0 +1,484 @@
+Using network 'development'.
+
+Compiling ./contracts/DepositHolder.sol...
+Compiling ./contracts/MultiplierHolder.sol...
+Compiling ./contracts/Owned.sol...
+Compiling ./contracts/Pausable.sol...
+Compiling ./contracts/Regulated.sol...
+Compiling ./contracts/Regulator.sol...
+Compiling ./contracts/RoutePriceHolder.sol...
+Compiling ./contracts/TollBoothHolder.sol...
+Compiling ./contracts/TollBoothOperator.sol...
+Compiling ./contracts/interfaces/DepositHolderI.sol...
+Compiling ./contracts/interfaces/MultiplierHolderI.sol...
+Compiling ./contracts/interfaces/OwnedI.sol...
+Compiling ./contracts/interfaces/PausableI.sol...
+Compiling ./contracts/interfaces/RegulatedI.sol...
+Compiling ./contracts/interfaces/RegulatorI.sol...
+Compiling ./contracts/interfaces/RoutePriceHolderI.sol...
+Compiling ./contracts/interfaces/TollBoothHolderI.sol...
+Compiling ./contracts/interfaces/TollBoothOperatorI.sol...
+Compiling ./contracts/mock/RoutePriceHolderMock.sol...
+Compiling ./test/TestOwnedA.sol...
+Compiling ./test/TestOwnedB.sol...
+Compiling ./test/TestOwnedC.sol...
+Compiling ./test/TestRoutePriceHolderA.sol...
+Compiling ./test/TestRoutePriceHolderB.sol...
+Compiling truffle/Assert.sol...
+Compiling truffle/DeployedAddresses.sol...
+
+[0m[0m
+[0m  TestOwnedC[0m
+  [32m  ✓[0m[90m testInitialOwner[0m[31m (555ms)[0m
+  [32m  ✓[0m[90m testCanChangeOwner[0m[31m (821ms)[0m
+
+[0m  TestOwnedA[0m
+  [32m  ✓[0m[90m testInitialOwner[0m[31m (364ms)[0m
+  [32m  ✓[0m[90m testCanChangeOwner[0m[31m (663ms)[0m
+
+[0m  TestRoutePriceHolderA[0m
+  [32m  ✓[0m[90m testInitialTollBoothHoldingValues[0m[31m (168ms)[0m
+  [32m  ✓[0m[90m testCanAddTollBooth[0m[31m (177ms)[0m
+  [32m  ✓[0m[90m testInitialRoutePrices[0m[31m (142ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePrice[0m[31m (273ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePriceBackToZero[0m[31m (367ms)[0m
+  [32m  ✓[0m[90m testCanAddAndRemoveManyRoutePrices_RoutePriceHolderMock[0m[31m (7687ms)[0m
+
+[0m  TestOwnedB[0m
+  [32m  ✓[0m[90m testInitialOwner[0m[31m (145ms)[0m
+  [32m  ✓[0m[90m testCanChangeOwner[0m[31m (200ms)[0m
+
+[0m  TestRoutePriceHolderB[0m
+  [32m  ✓[0m[90m testInitialTollBoothHoldingValues[0m[31m (155ms)[0m
+  [32m  ✓[0m[90m testCanAddTollBooth[0m[31m (154ms)[0m
+  [32m  ✓[0m[90m testInitialRoutePrices[0m[31m (152ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePrice[0m[31m (279ms)[0m
+  [32m  ✓[0m[90m testCanSetRoutePriceBackToZero[0m[31m (245ms)[0m
+  [32m  ✓[0m[90m testCanAddAndRemoveManyRoutePrices_TollBoothOperator[0m[31m (7653ms)[0m
+
+[0m  Contract: MultiplierHolder[0m
+  [32m  ✓[0m[90m should fail to deploy a MultiplierHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a TollBoothOperator if pass value[0m
+  [31m  1) should have correct number of functions[0m
+    > No events were emitted
+[0m    MultiplierHolder[0m
+[0m      getMultiplier[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[31m (85ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for multiplier from any address[0m[33m (55ms)[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getMultiplier[0m[31m (108ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getMultiplier[0m
+[0m      setMultiplier[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if asking from wrong owner[0m[33m (74ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if type is 0[0m[33m (70ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if no change[0m[31m (177ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if pass value[0m
+      [32m  ✓[0m[90m should be possible to set 1 multipliers[0m[31m (223ms)[0m
+[0m      setMultiplier a second time[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - zero[0m[31m (161ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - multiplier1[0m[31m (175ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier0[0m[31m (189ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier1[0m[31m (154ms)[0m
+[0m      setMultiplier a second time after an owner change[0m
+      [32m  ✓[0m[90m should not be possible to set another multiplier if old owner[0m[33m (53ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if same[0m[33m (65ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier[0m[31m (137ms)[0m
+[0m    TollBoothOperator[0m
+[0m      getMultiplier[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (73ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for multiplier from any address[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getMultiplier[0m[31m (97ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getMultiplier[0m
+[0m      setMultiplier[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if asking from wrong owner[0m[33m (55ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if type is 0[0m[33m (66ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if no change[0m[31m (126ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if pass value[0m
+      [32m  ✓[0m[90m should be possible to set 1 multipliers[0m[31m (162ms)[0m
+[0m      setMultiplier in TollBoothOperator is not pausable[0m
+      [32m  ✓[0m[90m should be possible to check getMultiplier if paused[0m
+      [32m  ✓[0m[90m should be possible to set multiplier if paused[0m[31m (180ms)[0m
+[0m      setMultiplier a second time[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - zero[0m[31m (212ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type0 - multiplier1[0m[31m (160ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier0[0m[31m (194ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier with values type1 - multiplier1[0m[31m (251ms)[0m
+[0m      setMultiplier a second time after an owner change[0m
+      [32m  ✓[0m[90m should not be possible to set another multiplier if old owner[0m[33m (70ms)[0m
+      [32m  ✓[0m[90m should not be possible to set multiplier if same[0m[33m (68ms)[0m
+      [32m  ✓[0m[90m should be possible to set another multiplier[0m[31m (268ms)[0m
+
+[0m  Contract: MultiplierHolder - stress[0m
+[0m    MultiplierHolder[0m
+[0m      stress test[0m
+      [32m  ✓[0m[90m should be possible to set and unset 500 multipliers[0m
+[0m    TollBoothOperator[0m
+[0m      stress test[0m
+      [32m  ✓[0m[90m should be possible to set and unset 500 multipliers[0m
+
+[0m  Contract: Regulator, Toll Booth Operator[0m
+[0m    isOperator[0m
+    [32m  ✓[0m[90m should have correct initial value[0m[31m (138ms)[0m
+[0m    createNewOperator[0m
+    [32m  ✓[0m[90m should be possible to create an operator[0m[31m (485ms)[0m
+[0m    removeOperator[0m
+    [32m  ✓[0m[90m should be possible to remove an operator[0m[31m (353ms)[0m
+
+[0m  Contract: TollBoothOperator[0m
+  [31m  2) should have correct number of functions[0m
+    > No events were emitted
+[0m    deploy[0m
+    [32m  ✓[0m[90m should not be possible to deploy a TollBoothOperator with deposit 0 - 1[0m[31m (142ms)[0m
+    [32m  ✓[0m[90m should be possible to deploy a TollBoothOperator with parameters - 1[0m[31m (322ms)[0m
+[0m    Vehicle Operations[0m
+[0m      enterRoad[0m
+      [32m  ✓[0m[90m should not be possible to enter road if paused[0m[31m (112ms)[0m
+      [32m  ✓[0m[90m should be possible to enter road with more than required deposit[0m[31m (210ms)[0m
+[0m      reportExitRoad with excessive deposited[0m
+      [31m  3) should be possible to report exit road on route with known price below deposited[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1131)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 3)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 216)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 5139)
+
+    ---------------------------
+      [31m  4) should be possible to report exit road on route with unknown price[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1131)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 3)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 216)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 5139)
+
+    ---------------------------
+[0m      Pending payments with vehicles on same route, then setRoutePrice[0m
+      [31m  5) should be possible to set the base route price below both deposits and reduce count by 1[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1131)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 3)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 216)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 4065)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 357696)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogRoadExited(exitBooth: <indexed>, exitSecretHashed: <indexed>, finalFee: 244296, refundWeis: 113400)
+
+    ---------------------------
+      [31m  6) should be possible to set the base route price above both deposits and reduce count by 1[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1131)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 3)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 216)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 4065)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 357696)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogPendingPayment(exitSecretHashed: <indexed>, entryBooth: <indexed>, exitBooth: <indexed>)
+    LogRoadExited(exitBooth: <indexed>, exitSecretHashed: <indexed>, finalFee: 650376, refundWeis: 0)
+
+    ---------------------------
+[0m        Clear one more pending payment[0m
+        [32m  ✓[0m[90m should be possible to set the base route price below both deposits then clear the second by hand[0m[31m (534ms)[0m
+[0m    Withdraw from 2 vehicles[0m
+    [31m  7) should be possible to withdraw if second vehicle has exited[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogVehicleTypeSet(sender: <indexed>, vehicle: <indexed>, vehicleType: <indexed>)
+    LogOwnerSet(previousOwner: <indexed>, newOwner: <indexed>)
+    LogTollBoothOperatorCreated(sender: <indexed>, newOperator: <indexed>, owner: <indexed>, depositWeis: 1131)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogTollBoothAdded(sender: <indexed>, tollBooth: <indexed>)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 3)
+    LogMultiplierSet(sender: <indexed>, vehicleType: <indexed>, multiplier: 216)
+    LogPausedSet(sender: <indexed>, newPausedState: <indexed>)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 3393)
+    LogRoadEntered(vehicle: <indexed>, entryBooth: <indexed>, exitSecretHashed: <indexed>, depositedWeis: 244296)
+    LogRoadExited(exitBooth: <indexed>, exitSecretHashed: <indexed>, finalFee: 119232, refundWeis: 125064)
+    LogFeesCollected(owner: <indexed>, amount: 119232)
+
+    ---------------------------
+
+[0m  Contract: Owned inheritance tree[0m
+  [32m  ✓[0m[90m should fail to deploy a Owned if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a Pausable if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a Regulator if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a DepositHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a MultiplierHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a RoutePriceHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a TollBoothHolder if pass value[0m
+  [32m  ✓[0m[90m should fail to deploy a TollBoothOperator if pass value[0m
+  [31m  8) should have correct number of functions[0m
+    > No events were emitted
+[0m    Owned[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m[33m (58ms)[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (107ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (65ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[31m (84ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (67ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (146ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (57ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (173ms)[0m
+[0m    Pausable[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (113ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (56ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (60ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[31m (90ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (160ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (46ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (148ms)[0m
+[0m    Regulator[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (91ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (50ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (48ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[31m (85ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (130ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (48ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (114ms)[0m
+[0m    DepositHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (92ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (66ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (53ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (42ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (134ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (59ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (147ms)[0m
+[0m    MultiplierHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (90ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (52ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (43ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (61ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (131ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (55ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (130ms)[0m
+[0m    RoutePriceHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (49ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (99ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (59ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (58ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (69ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (147ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[31m (79ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (139ms)[0m
+[0m    TollBoothHolder[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (108ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (46ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[33m (42ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[31m (321ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (148ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (54ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (177ms)[0m
+[0m    TollBoothOperator[0m
+[0m      getOwner[0m
+      [32m  ✓[0m[90m should have correct initial value[0m
+      [32m  ✓[0m[90m should be possible to ask for owner from any address[0m[33m (40ms)[0m
+      [32m  ✓[0m[90m should be possible to send a transaction to getOwner[0m[31m (141ms)[0m
+      [32m  ✓[0m[90m should not be possible to send a transaction with value to getOwner[0m
+[0m      setOwner[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong owner[0m[33m (52ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if to 0[0m[31m (82ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if no change[0m[33m (72ms)[0m
+      [32m  ✓[0m[90m should not be possible to set owner if pass value[0m
+      [32m  ✓[0m[90m should be possible to set owner[0m[31m (125ms)[0m
+[0m      setOwner a second time[0m
+      [32m  ✓[0m[90m should not be possible to set owner if asking from wrong one[0m[33m (65ms)[0m
+      [32m  ✓[0m[90m should be possible to set owner again[0m[31m (157ms)[0m
+
+
+[92m [0m[32m 160 passing[0m[90m (6m)[0m
+[31m  8 failing[0m
+
+[0m  1) Contract: MultiplierHolder
+       should have correct number of functions:
+
+      [31mAssertionError: expected 16 to equal 14[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-16[0m
+      [32m+14[0m
+      [0m[90m
+      at test/multiplierHolder.js:286:36
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  2) Contract: TollBoothOperator
+       should have correct number of functions:
+
+      [31mAssertionError: expected 53 to equal 43[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-53[0m
+      [32m+43[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:473:38
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  3) Contract: TollBoothOperator
+       Vehicle Operations
+         reportExitRoad with excessive deposited
+           should be possible to report exit road on route with known price below deposited:
+
+      [31mAssertionError: expected 0 to equal 1[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-0[0m
+      [32m+1[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:145:44
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  4) Contract: TollBoothOperator
+       Vehicle Operations
+         reportExitRoad with excessive deposited
+           should be possible to report exit road on route with unknown price:
+
+      [31mAssertionError: expected 1 to equal 2[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-1[0m
+      [32m+2[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:186:44
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  5) Contract: TollBoothOperator
+       Vehicle Operations
+         Pending payments with vehicles on same route, then setRoutePrice
+           should be possible to set the base route price below both deposits and reduce count by 1:
+
+      [31mAssertionError: expected 1 to equal 2[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-1[0m
+      [32m+2[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:248:32
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  6) Contract: TollBoothOperator
+       Vehicle Operations
+         Pending payments with vehicles on same route, then setRoutePrice
+           should be possible to set the base route price above both deposits and reduce count by 1:
+
+      [31mAssertionError: expected 1 to equal 2[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-1[0m
+      [32m+2[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:305:32
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  7) Contract: TollBoothOperator
+       Withdraw from 2 vehicles
+         should be possible to withdraw if second vehicle has exited:
+
+      [31mAssertionError: expected 122625 to equal 3393[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-122625[0m
+      [32m+3393[0m
+      [0m[90m
+      at test/tollBoothOperator_student.js:460:28
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  8) Contract: Owned inheritance tree
+       should have correct number of functions:
+
+      [31mAssertionError: expected 12 to equal 11[0m
+      [32m+ expected[0m [31m- actual[0m
+
+      [31m-12[0m
+      [32m+11[0m
+      [0m[90m
+      at test/owned.js:181:35
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+
+
